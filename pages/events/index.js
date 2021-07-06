@@ -20,9 +20,7 @@ export default function EventsPage({ events }) {
 export async function getStaticProps() {
     //ここでのconsole.logはサーバーサイドなので、下のターミナルに出力される
 
-    // TypeError: Only absolute URLs are supported. This error happened while generating the page. Any console logs will be displayed in the terminal window.
-    // const res = await fetch('${API_URL}/api/events');
-    const res = await fetch(API_URL + '/api/events');
+    const res = await fetch(`${API_URL}/api/events`);
     const events = await res.json();
 
     return {
