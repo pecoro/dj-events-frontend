@@ -6,7 +6,6 @@ First, run the development server:
 
 ```bash
 
-cd dj-events-frontend
 npm run dev
 
 ```
