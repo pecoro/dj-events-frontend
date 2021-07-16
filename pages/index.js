@@ -28,12 +28,12 @@ export async function getStaticProps(){
   //ここでのconsole.logはサーバーサイドなので、下のターミナルに出力される
 
   // TypeError: Only absolute URLs are supported. This error happened while generating the page. Any console logs will be displayed in the terminal window.
-  // const res = await fetch('${API_URL}/api/events');
-  const res = await fetch(API_URL + '/api/events');
+  // const res = await fetch('${API_URL}/apt/events');
+  const res = await fetch(API_URL + '/events?_sort=date:ASC&_limit=3');
   const events = await res.json();
 
   return{
-    props:{events:events.slice(0,3)},
+    props:{events},
     revalidate:1,
   }
 }
