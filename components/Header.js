@@ -35,8 +35,8 @@ export default function Header() {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/account/dashboad">
-                                <a>Dashboad</a>
+                            <Link href="/account/dashboard">
+                                <a>Dashboard</a>
                             </Link>
                         </li>
                         <li>
