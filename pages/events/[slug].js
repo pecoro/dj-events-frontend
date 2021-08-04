@@ -77,13 +77,13 @@ export default function EventPage({evt}) {
 
 export async function getServerSideProps({query:{slug}}) {
     console.log(slug);
-    const res = await fetch(`${API_URL}/events/?slug=${slug}`)
+    const res = await fetch(`${API_URL}/events?slug=${slug}`)
     // const res = await fetch(`${API_URL}events/boom-dance-festival-experience`)
     const events = await res.json()
 
     return{
         props:{
-            evt:events[0]
+            evt:events[0],
         },
     }
 }
