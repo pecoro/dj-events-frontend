@@ -60,22 +60,7 @@ export default function EventPage({evt}) {
 //     }
 // }
 
-// export async function getStaticProps({params:{slug}}) {
-//     console.log(slug);
-//     // const res = await fetch(`${API_URL}events/${slug}`)
-//     const res = await fetch(`${API_URL}events/boom-dance-festival-experience`)
-//     const events = await res.json()
-
-//     return{
-//         props:{
-//             evt:events[0]
-//         },
-//         revalidate:1
-//     }
-// }
-
-
-export async function getServerSideProps({query:{slug}}) {
+export async function getStaticProps({params:{slug}}) {
     console.log(slug);
     const res = await fetch(`${API_URL}/events?slug=${slug}`)
     // const res = await fetch(`${API_URL}events/boom-dance-festival-experience`)
@@ -85,5 +70,20 @@ export async function getServerSideProps({query:{slug}}) {
         props:{
             evt:events[0],
         },
+        revalidate:1
     }
 }
+
+// 試しに
+// export async function getServerSideProps({query:{slug}}) {
+//     console.log(slug);
+//     const res = await fetch(`${API_URL}/events?slug=${slug}`)
+//     // const res = await fetch(`${API_URL}events/boom-dance-festival-experience`)
+//     const events = await res.json()
+
+//     return{
+//         props:{
+//             evt:events[0],
+//         },
+//     }
+// }
